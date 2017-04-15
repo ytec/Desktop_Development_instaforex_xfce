@@ -26,13 +26,13 @@ EXPOSE 6000
 
 RUN apt-get install -y python3 python3-pip git wget
 RUN apt-get install -y zlib1g-dev libjpeg-dev
-CMD ["bash"]
+
 RUN cd /opt \
     && wget https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora-l10n/firefox-54.0a2.es-ES.linux-x86_64.tar.bz2 \
     && tar -jxvf firefox-54.0a2.es-ES.linux-x86_64.tar.bz2 \
     && rm firefox-54.0a2.es-ES.linux-x86_64.tar.bz2
 
-RUN kdir /var/instaforex \
+RUN mkdir /var/instaforex \
     && cd /var/instaforex \
     && git clone https://github.com/ytec/instaforex-web.git \
     && pip3 install -r /var/instaforex/instaforex-web/requirements.txt
