@@ -25,6 +25,7 @@ RUN apt-get install -y apt-utils \
 
 RUN apt-get install -y xfce4
 EXPOSE 6000
+ENV DISPLAY 0.0
 
 RUN apt-get install -y ssh nano \
     && service ssh start
