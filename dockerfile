@@ -19,7 +19,7 @@ ENV LC_MESSAGES es_ES.UTF-8
 RUN apt-get update
 
 RUN apt-get install -y apt-utils \
-    && apt-get install locales
+    && apt-get install -y locales
 
 RUN apt-get install -y xfce4
 EXPOSE 6000
