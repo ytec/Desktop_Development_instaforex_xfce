@@ -14,10 +14,8 @@ RUN dpkg-reconfigure locales
 
 RUN apt-get install -y xfce4
 EXPOSE 6000
-ENV DISPLAY 0.0
 
-RUN apt-get install -y ssh nano \
-    && service ssh start
+RUN apt-get install -y ssh nano 
 
 RUN apt-get install -y python3 python3-pip
 RUN apt-get install -y zlib1g-dev libjpeg-dev
@@ -33,3 +31,5 @@ RUN mkdir /var/instaforex \
     && pip3 install -r /var/instaforex/instaforex-web/requirements.txt
 
 EXPOSE 8000
+
+CMD service ssh start
