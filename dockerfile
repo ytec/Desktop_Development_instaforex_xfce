@@ -8,14 +8,14 @@ RUN apt-get install -y apt-utils \
     && apt-get install -y locales
 RUN rm /etc/default/locale \
     && cd /etc/default/ \
-    && wget https://raw.githubusercontent.com/ytec/Desktop_xfce_Development_instaforex/master/locale
+    && wget https://raw.githubusercontent.com/ytec/Desktop_xfce_Development_instaforex/master/es_ES/locale
 
 RUN dpkg-reconfigure locales
 
 RUN apt-get install -y xfce4
 EXPOSE 6000
 
-RUN apt-get install -y ssh nano 
+RUN apt-get install -y ssh nano
 
 RUN apt-get install -y python3 python3-pip
 RUN apt-get install -y zlib1g-dev libjpeg-dev
